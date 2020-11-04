@@ -1,11 +1,16 @@
+import { SET_USERNAME } from "../actions/githubActions";
+
 const initialState = {
   username: '',
   followers: 0,
-  repolist: []
+  repos: []
 }
 
 export default function reducer(state = initialState, action) {
   switch(action.type) {
-    default: return state;
+    case SET_USERNAME:
+      return { ...state, username: action.payload };
+    default:
+      return state;
   }
 }
