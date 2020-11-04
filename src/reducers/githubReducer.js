@@ -1,4 +1,4 @@
-import { SET_FOLLOWERS, SET_USERNAME } from "../actions/githubActions";
+import { SET_FOLLOWERS, SET_USERNAME, SET_REPOS } from "../actions/githubActions";
 
 const initialState = {
   username: '',
@@ -12,6 +12,8 @@ export default function reducer(state = initialState, action) {
       return { ...state, username: action.payload };
     case SET_FOLLOWERS:
       return { ...state, followers: action.payload };
+    case SET_REPOS:
+      return { ...state, repos: action.payload };
     default:
       return state;
   }
