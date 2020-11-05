@@ -1,49 +1,51 @@
 import reducer from './githubReducer';
-import { setUsername, setFollowers, setRepos } from '../actions/githubActions';
+import { setUser, setRepos, setSearch } from '../actions/githubActions';
 
 describe('github reducer', () => {
   it('handles the SET_USERNAME action', () => {
     const state = {
-      username: '',
-      followers: 0,
+      user: {},
+      search: '',
       repos: [] 
     };
 
-    const action = setUsername('Michelle');
+    const action = setUser(
+      { name: 'Michelle' }
+      );
 
     const newState = reducer(state, action);
 
     expect(newState).toEqual({
-      username: 'Michelle',
-      followers: 0,
+      user: { name: 'Michelle' },
+      search: '',
       repos: []
     })
   });
 
-  it('handles the SET_FOLLOWERS action', () => {
+  it('handles the SET_SEARCH action', () => {
     const state = {
-      username: '',
-      followers: 0,
+      user: {},
+      search: '',
       repos: []
     };
 
-    const action = setFollowers(10);
+    const action = setSearch('Michelle');
 
     const newState = reducer(state, action);
 
     expect(newState).toEqual({
-      username: '',
-      followers: 10,
+      user: {},
+      search: 'Michelle',
       repos: []
     })
   });
 
   it('handles the SET_REPOS action', () => {
     const state = {
-      username: '',
-      followers: 0,
+      user: {},
+      search: '',
       repos: []
-    };
+    }; 
 
     const action = setRepos([
       { repoName: 'michmitz' },
@@ -53,11 +55,11 @@ describe('github reducer', () => {
     const newState = reducer(state, action);
 
     expect(newState).toEqual({
-      username: '',
-      followers: 0,
+      user: {},
+      search: '',
       repos: [
       { repoName: 'michmitz' },
       { repoName: 'michmitz-lab-2'}
     ]})
-  });
-});
+  }); 
+}); 

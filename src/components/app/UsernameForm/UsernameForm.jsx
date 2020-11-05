@@ -1,26 +1,25 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setUsername, fetchUser, fetchFollowers, fetchRepos } from '../../../actions/githubActions';
+import { fetchUser, fetchRepos } from '../../../actions/githubActions';
 
 const UsernameForm = () => {
   const dispatch = useDispatch();
-  const userName = useSelector(state => state.username);
+  const search = useSelector(state => state.search);
   
   const handleChange = ({ target }) => {
-    dispatch(setUsername(target.value));
+    dispatch(setSearch(target.value));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    dispatch(fetchUser(userName));
-    dispatch(fetchFollowers(userName));
-    dispatch(fetchRepos(userName));
+
+    dispatch(fetchUser(search));
+    dispatch(fetchRepos(search));
   };
 
   return (
     <form onSubmit={handleSubmit}>
-    <label>
+    <label>Enter a Github Username:
     <textarea onChange={handleChange} placeholder="username"></textarea>
     </label>
     <button>Submit</button>
