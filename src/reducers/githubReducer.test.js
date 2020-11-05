@@ -60,4 +60,4 @@ describe('github reducer', () => {
       { repoName: 'michmitz-lab-2'}
     ]})
   });
-}); 
+});
