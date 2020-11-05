@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchUser, fetchRepos } from '../../../actions/githubActions';
+import { fetchUser, fetchRepos, setSearch } from '../../../actions/githubActions';
 
 const UsernameForm = () => {
   const dispatch = useDispatch();
@@ -14,7 +14,7 @@ const UsernameForm = () => {
     e.preventDefault();
 
     dispatch(fetchUser(search));
-    dispatch(fetchRepos(search));
+    // dispatch(fetchRepos(search));
   };
 
   return (

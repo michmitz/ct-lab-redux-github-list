@@ -3,7 +3,7 @@ export const getUser = async(search) => {
     .then(res => res.json())
     .then(json => ({
       name: json.name,
-      follower: json.followers,
+      followers: json.followers,
       following: json.following,
       profileLink: json.html_url
     }));
