@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-import RepoList from './RepoItem';
+import RepoList from './RepoList';
 import { Provider } from 'react-redux';
 import store from '../../../store';
 

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 
-const RepoItem = () => {
+const RepoList = () => {
   const repoList = useSelector(state => state.repos);
 
   const repoElements = repoList.map(repo => {
@@ -19,10 +19,10 @@ const RepoItem = () => {
   )
 }
 
-RepoItem.propTypes = {
+RepoList.propTypes = {
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired
 }
 
-export default RepoItem
+export default RepoList
