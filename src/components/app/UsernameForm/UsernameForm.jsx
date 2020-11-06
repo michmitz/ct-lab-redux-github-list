@@ -14,7 +14,7 @@ const UsernameForm = () => {
     e.preventDefault();
 
     dispatch(fetchUser(search));
-    // dispatch(fetchRepos(search));
+    dispatch(fetchRepos(search));
   };
 
   return (
